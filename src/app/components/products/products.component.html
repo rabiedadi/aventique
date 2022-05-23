@@ -1,0 +1,25 @@
+<h1>Inventaire</h1>
+
+<div class="table-container">
+  <table>
+    <tr>
+      <th><span>
+          Information
+        </span></th>
+      <th><span>
+          données
+        </span></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+    <tr *ngFor="let product of products$ | async; trackBy: productsTracker">
+      <td>{{ product.infos }}</td>
+      <td>{{ product.data }}</td>
+      <td><button class="btn rounded black" (click)="command(product)">Commander un produit</button></td>
+      <td><button class="btn rounded transparent hover-red" (click)="cancel(product)">Annuler la commande</button></td>
+      <td><button class="btn rounded light" (click)="revival(product)">Relancer le fournisseur</button></td>
+    </tr>
+  </table>
+</div>
+<div>

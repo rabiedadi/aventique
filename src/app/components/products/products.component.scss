@@ -1,0 +1,26 @@
+:host {
+  display: block;
+  padding: 1rem;
+  .btn.hover-red:hover {
+    background-color: red;
+  }
+  .table-container {
+    display: block;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: scroll;
+    table {
+      width: 100%;
+      th {
+        text-align: left;
+        border-bottom: 1px solid #484848;
+        padding: 1rem 0.25rem;
+      };
+      td {
+        padding: 0.5rem 0.25rem;
+        border-bottom: 1px solid #e6e6e6;
+        white-space: nowrap;
+      }
+    }
+  }
+}

@@ -1,0 +1,201 @@
+button {
+    outline: none;
+}
+.btn {
+    position: relative;
+    height: 3rem;
+    padding: 0 1.5rem;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Poppins-medium';
+    font-size: 0.875rem;
+    line-height: 1.5;
+    border-radius: 0;
+    border: 0;
+    background-color: white;
+    color: #333333;
+    // overflow: visible;
+    outline: none;
+    box-sizing: border-box;
+    white-space: nowrap;
+    cursor: pointer;
+    span, p {
+        white-space: nowrap;
+    }
+    &:disabled {
+        cursor: not-allowed;
+    }
+    &.loading {
+        cursor: wait !important;
+        overflow: hidden;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 150%;
+            background: repeating-linear-gradient(
+                60deg, transparent, transparent 0.75rem, #e6e6e645 .75rem, #e6e6e645 1.5rem
+            );
+            animation: btn_loading 0.75s infinite linear;
+            @keyframes btn_loading {
+                0% { transform: translateX(0) }
+                100% { transform: translateX(-1.75rem) }
+            }
+        }
+    }
+}
+.btn.square {
+    width: 3rem !important;
+    padding: 0;
+}
+.btn.rounded {
+    border-radius: 0.25rem;
+}
+.btn.rounded-full {
+    border-radius: 2rem;
+}
+// TYPE 1 ===================================================================================================
+.btn.filled { 
+    background-color: #f56f80;
+    color: white;
+    &:hover, &:focus {
+        background-color: #ffa9b5;
+    }
+}
+// TYPE 2 ===================================================================================================
+.btn.outlined {
+    border: 2px solid #ff8697;
+    background-color: white;
+    color: #ff8697;
+    &:hover {
+        background-color: rgba(255, 134, 151, 0.16);
+    }
+}
+
+.btn.outlined-black {
+    border: 2px solid #000000;
+    background-color: white;
+    color: #000000;
+    &:hover {
+        background-color: #EEEEEE;
+    }
+}
+// TYPE 3 ===================================================================================================
+.btn.social { 
+    border: 1px solid #999999;
+    color: #484848;
+    font-family: 'Poppins';
+}
+// TYPE 4 ===================================================================================================
+.btn.secondary { 
+    border: 2px solid #999999;
+    &:hover, &:focus {
+        background-color: #eeeeee;
+    }
+}
+// TYPE 5 ===================================================================================================
+.btn.black {
+    background-color: #333333;
+    color: white;
+    &:disabled {
+        background-color: #767676;
+    }
+    &:not(:disabled) {
+        &:hover, &:focus {
+            background-color: black;
+        }
+    }
+}
+// TYPE 6 ===================================================================================================
+.btn.transparent { 
+    background-color: transparent;
+    color: #333333;
+    &:hover, &:focus {
+        background-color: #EEEEEE;
+    }
+    &.no-hover {
+        background-color: transparent !important;
+    }
+}
+// TYPE 6 ===================================================================================================
+.btn.light { 
+    background-color: #F4F4F4;
+    color: #333333;
+    &:hover, &:focus {
+        background-color: #EEEEEE;
+    }
+    &:disabled {
+        color: #767676;
+    }
+}
+// TYPE 7 ===================================================================================================
+.btn.btn-add { 
+    height: 1.5rem;
+    width: 1.5rem;
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 1.25rem;
+    padding: 0;
+    margin-right: 0.5rem;
+    border-radius: 0.3rem;
+    border: 2px solid #797979;
+}
+// TYPE 8 ===================================================================================================
+.btn.btn-counter {
+    height: 2rem;
+    width: 2rem;
+    box-sizing: border-box;
+    padding: 0;
+    border-radius: 50%;
+    border: 1px solid #999999;
+    &:hover:not(:disabled), &:focus:not(:disabled) { 
+        border-color: black; 
+        &::after, &::before {
+            background-color: black !important;
+        }
+    }
+    &:disabled { 
+        border-color: #E6E6E6; 
+        &::after, &::before {
+            background-color: #E6E6E6 !important;
+        }
+    }
+    &.plus {
+        &::after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            content: '';
+            height: 2px;
+            width: 12px;
+            background-color: #999999;
+        }
+        &::before {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            content: '';
+            height: 12px;
+            width: 2px;
+            background-color: #999999;
+        }
+    }
+    &.moin {
+        &::after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            content: '';
+            height: 2px;
+            width: 12px;
+            background-color: #999999;
+        }
+    }
+}

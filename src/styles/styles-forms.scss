@@ -1,0 +1,120 @@
+.input-groupe {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.85rem;
+  .input-wrapper {
+    margin-top: -1px;
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+  .input-wrapper:first-child {
+    border-radius: 16px 16px 0 0;
+  }
+  .input-wrapper:last-child {
+    border-radius: 0 0 16px 16px;
+  }
+  &.error-input-wrapper {
+    .input-wrapper {
+      border: 2px solid #ff4b22;
+    }
+    .input-wrapper:not(:first-child) {
+      border-top: 0;
+    }
+  }
+}
+
+.input-H-groupe {
+  display: flex;
+  margin-bottom: 1.85rem;
+  .input-wrapper:not(:first-of-type) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    margin-bottom: 0;
+  }
+  .input-wrapper:not(:last-of-type) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    margin-inline-end: -1px;
+    margin-bottom: 0;
+  }
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-bottom: 30px;
+  box-sizing: border-box;
+  border-radius: 16px;
+  border: solid 1px #cbcbcb;
+  > input {
+    width: 100%;
+    border-radius: 16px;
+    border: 0;
+    height: calc(100% - 2px);
+    outline: none;
+    padding: 14px 12px;
+    box-sizing: border-box;
+  }
+  &:hover {
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.16);
+  }
+  &.active-input-wrapper {
+    border: 2px solid #333333;
+  }
+  &.error-input-wrapper {
+    border: 2px solid #ff4b22;
+    ::ng-deep {
+      .mat-label {
+        color: #ff4b22;
+      }
+    }
+    &.textarea {
+      background-color: rgba(255, 75, 34, 0.12) !important;
+    }
+    .text-area-counter {
+      color: #ff4b22;
+    }
+  }
+  mat-form-field {
+    width: 100%;
+  }
+  .mat-form-field-wrapper {
+    padding-bottom: 0;
+  }
+  .mat-error,
+  .mat-hint {
+    margin-top: 20px;
+    font-size: 10.5px;
+  }
+  .text-area-counter {
+    position: absolute;
+    right: 24px;
+    bottom: 16px;
+    font-size: 12px;
+    font-family: "Poppins-SemiBold";
+    font-weight: 600;
+    color: #333333;
+  }
+  .input-errors {
+    position: absolute;
+    bottom: -4px;
+    left: 10.5px;
+    transform: translateY(100%);
+    font-size: 12px;
+    line-height: 16px;
+    font-family: "Poppins";
+    color: #ff4b22;
+  }
+}
+.input-wrapper-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 16px;
+  max-height: 1.25rem;
+  cursor: pointer;
+  &:hover {
+    filter: brightness(0.5);
+  }
+}
