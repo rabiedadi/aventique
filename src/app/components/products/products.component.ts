@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { first, map } from 'rxjs/operators';
 import { ProductsService } from 'src/store/services/products.service';
 import { Product } from 'src/models';
 
@@ -44,16 +44,28 @@ export class ProductsComponent implements OnInit {
   }
 
   command(product: Product) {
-    this._products.command(product)
+    this._products.command(product).pipe(first()).subscribe(_ => {
+      alert('success')
+    }, error => {
+      console.log('something wrong happend');
+    })
   }
 
   cancel(product: Product) {
-    this._products.cancel(product)
+    this._products.cancel(product).subscribe(_ => {
+      alert('success')
+    }, error => {
+      console.log('something wrong happend');
+    })
   }
 
   revival(product: Product) {
     this.actionDeVerification() 
-    && this._products.revival(product)
+    && this._products.revival(product).subscribe(_ => {
+      alert('success')
+    }, error => {
+      console.log('something wrong happend');
+    })
   }
 
   actionDeVerification() {
